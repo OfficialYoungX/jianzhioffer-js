@@ -4,13 +4,32 @@ const swap = (arr, a, b) => {
   arr[b] = temp
 }
 
+function partition2(arr, start, end) {
+  // 选择第一个元素作为分割元素
+  let i = start
+  let j = end + 1
+  do {
+    do {
+      i++
+    } while (arr[i] < arr[start])
+    do {
+      j--
+    } while (arr[j] > arr[start])
+    if (i < j) {
+      swap(arr, i, j)
+    }
+  } while (i < j)
+  swap(arr, start, j)
+  return j
+}
+
 function partition(arr, start, end) {
   // 选择第一个元素作为分割元素
+  // 将分割元素放在数组的最后一个位置
   swap(arr, start, end)
 
   let small = start - 1
-  let index = start
-  for (; index < end; index++) {
+  for (let index = start; index < end; index++) {
     if (arr[index] < arr[end]) {
       small++
       if (small !== index) {
