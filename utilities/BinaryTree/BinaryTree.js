@@ -1,4 +1,18 @@
-const Node = require('../utilities/Node')
+class Node {
+  constructor(value) {
+    this.l = null
+    this.r = null
+    this.value = value
+  }
+
+  setL(node) {
+    this.l = node
+  }
+
+  setR(node) {
+    this.r = node
+  }
+}
 
 class Tree {
   constructor() {
@@ -41,4 +55,4 @@ class Tree {
   }
 }
 
-module.exports = Tree
+module.exports = { Tree, Node }

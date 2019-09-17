@@ -17,6 +17,7 @@ class LinkList {
   }
 
   print() {
+    if (!this.head.next) return
     let p = this.head.next
     let output = []
     while (p) {

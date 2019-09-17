@@ -1,4 +1,4 @@
-const Tree = require('../utilities/BinaryTree')
+const { Tree } = require('../utilities/BinaryTree')
 
 /**
  *
