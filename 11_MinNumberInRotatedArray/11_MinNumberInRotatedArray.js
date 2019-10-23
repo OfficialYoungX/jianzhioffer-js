@@ -10,28 +10,20 @@
  *
  */
 function minNumberInRotatedArray(rotatedArray) {
-  if (rotatedArray[0] < rotatedArray[rotatedArray.length - 1]) return 0
-  function core(start, end) {
-    if (start >= end) return start
+    if (!rotatedArray.length) return
+    if (rotatedArray[0] < rotatedArray[rotatedArray.length - 1]) return 0
+    function core(start, end) {
+        if (start >= end) return start
 
-    const center = Math.floor((start + end) / 2)
-    if (rotatedArray[center] >= rotatedArray[0]) {
-      return core(center + 1, end)
-    } else {
-      return core(start, center - 1)
+        const center = Math.floor((start + end) / 2)
+        if (rotatedArray[center] >= rotatedArray[0]) {
+            return core(center + 1, end)
+        } else {
+            return core(start, center - 1)
+        }
     }
-  }
-  let minIndex = core(0, rotatedArray.length - 1)
-  return rotatedArray[minIndex] === rotatedArray[0] ? 0 : minIndex
+    let minIndex = core(0, rotatedArray.length - 1)
+    return rotatedArray[minIndex] === rotatedArray[0] ? 0 : minIndex
 }
 
-// test
-function test(array) {
-  console.log(minNumberInRotatedArray(array))
-}
-
-test([3, 4, 5, 1, 2]) // 升序的旋转数组
-test([3, 4, 5, 8, 10, 22, 1, 2])
-test([3, 4, 5, 8, 10, 22]) //升序数组
-test([3, 3, 3, 3, 3, 3]) // 相同元素数组
-test([3]) // 单个元素数组
+module.exports = minNumberInRotatedArray
