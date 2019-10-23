@@ -9,28 +9,17 @@
  * @returns {boolean}
  */
 function FindNumbersWithSum(data, sum) {
-  if (!data || !data.length || data.length === 1) return false;
+    if (!data || !data.length || data.length === 1) return false
 
-  let small = 0,
-    large = data.length - 1;
-  while (small < large) {
-    let tempSum = data[small] + data[large];
-    if (tempSum === sum) return true;
-    if (tempSum < sum) small++;
-    else large--;
-  }
-  return false;
+    let small = 0,
+        large = data.length - 1
+    while (small < large) {
+        let tempSum = data[small] + data[large]
+        if (tempSum === sum) return true
+        if (tempSum < sum) small++
+        else large--
+    }
+    return false
 }
 
-// test
-function test(data, sum) {
-  console.log(FindNumbersWithSum(data, sum));
-}
-
-test([1, 2, 4, 7, 11, 15], 15);
-test([1, 2, 4, 7, 11, 16], 17);
-test([1, 2, 4, 7, 11, 16], 10);
-test([10], 10);
-test([], 10);
-
-module.exports = FindNumbersWithSum;
+module.exports = FindNumbersWithSum

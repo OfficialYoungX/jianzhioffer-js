@@ -1,0 +1,16 @@
+{
+    "name": "jianzhioffer-js",
+    "version": "1.0.0",
+    "description": "《剑指 offer》中题目的 JS 实现",
+    "main": "index.js",
+    "repository": "git@github.com:OfficialYoungX/jianzhioffer-js.git",
+    "author": "OfficialYoungX <1070381686@qq.com>",
+    "license": "MIT",
+    "private": false,
+    "scripts": {
+        "test": "jest"
+    },
+    "devDependencies": {
+        "jest": "^24.9.0"
+    }
+}
